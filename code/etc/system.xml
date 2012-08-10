@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<banners translate="title" module="banners">
+			<label>dzine-hub</label>
+			<sort_order>100</sort_order>
+		</banners>
+	</tabs>
+	<sections>
+        <banners translate="label" module="banners">
+            <label>Banner Configuration</label>
+            <tab>banners</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+            	<bannerconfig translate="label" module="banners">
+            		<label>Configuration</label>
+            		<frontend_type>text</frontend_type>
+            		<show_in_default>1</show_in_default>
+            		<show_in_website>1</show_in_website>
+            		<show_in_store>1</show_in_store>
+            		<fields>
+            			<banner_effect>
+            				<label>Effect</label>
+            				<frontend_type>select</frontend_type>
+            				<source_model>banners/source_effects</source_model>
+				            <sort_order>1</sort_order>
+				            <show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>
+            			</banner_effect>
+            			<keyboard_nav>
+            				<label>Keyboard Navigation</label>
+            				<sort_order>2</sort_order>
+            				<frontend_type>select</frontend_type>
+            				<source_model>banners/source_keyboardnav</source_model>
+                                    <comment>Use keyboard left &amp; right arrows</comment>
+            				<show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>
+            			</keyboard_nav>
+            			<control_nav>
+            				<label>Control Navigation</label>
+            				<sort_order>3</sort_order>
+            				<frontend_type>select</frontend_type>
+                                    <comment>Display 1,2,3 numbers</comment>
+            				<source_model>banners/source_keyboardnav</source_model>
+            				<show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>
+            			</control_nav>
+                              <prev_next>
+                                    <label>Prev &amp; Next Buttons</label>
+                                    <sort_order>4</sort_order>
+                                    <frontend_type>select</frontend_type>
+                                    <source_model>banners/source_prevnext</source_model>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                              </prev_next>
+                              <pauseonhover>
+                                    <label>Pause animation</label>
+                                    <sort_order>5</sort_order>
+                                    <frontend_type>select</frontend_type>
+                                    <comment>Pause animation on hover</comment>
+                                    <source_model>banners/source_pauseonhover</source_model>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                              </pauseonhover>
+                              <manual_advance>
+                                    <label>Manual Advance</label>
+                                    <sort_order>6</sort_order>
+                                    <frontend_type>select</frontend_type>
+                                    <comment>Force manual transitions</comment>
+                                    <source_model>banners/source_manualadvance</source_model>
+                                    <show_in_default>1</show_in_default>
+                                    <show_in_website>1</show_in_website>
+                                    <show_in_store>1</show_in_store>
+                              </manual_advance>
+            			<transition_speed>
+            				<label>Transition Speed</label>
+            				<sort_order>7</sort_order>
+            				<frontend_type>text</frontend_type>
+                                    <comment>Animation speed</comment>
+            				<show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>
+            			</transition_speed>
+            			<display_time>
+            				<label>Display Time</label>
+            				<sort_order>8</sort_order>
+            				<frontend_type>text</frontend_type>
+                                    <comment>Pause time between banners</comment>
+            				<show_in_default>1</show_in_default>
+				            <show_in_website>1</show_in_website>
+				            <show_in_store>1</show_in_store>
+				        </display_time>
+            		</fields>
+            	</bannerconfig>
+            </groups>
+        </banners>
+    </sections>
+</config>

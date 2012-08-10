@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Dzinehub_Banners>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Dzinehub_Banners>
+	</modules>
+</config>

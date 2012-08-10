@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<banners translate="title" module="banners">
+			<title>Banners</title>
+			<sort_order>80</sort_order>
+			<action>adminhtml/manage/index</action>
+			<children>
+				<manage translate="title">
+					<title>Manage Banners</title>
+					<action>adminhtml/banneradmin/index</action>
+				</manage>
+			</children>
+		</banners>
+	</menu>
+
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<banners translate="title" module="banners">
+						<title>Banners</title>
+						<sort_order>30</sort_order>
+						<children>
+							<manage translate="title">
+								<title>Manage Banners</title>
+							</manage>
+						</children>
+					</banners>
+					<system>
+						<children>
+							<config>
+								<children>
+									<banners translate="title" module="banners">
+										<title>Banners</title>
+									</banners>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

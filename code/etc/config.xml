@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Dzinehub_Banners>
+			<version>0.1.0</version>
+		</Dzinehub_Banners>
+	</modules>
+
+	<frontend>
+		<routers>
+            <banners>
+                <use>standard</use>
+                <args>
+                    <module>Dzinehub_Banners</module>
+                    <frontName>banners</frontName>
+                </args>
+            </banners>
+        </routers>
+        <layout>
+            <updates>
+                <banners> 
+                    <file>banners.xml</file>
+                </banners>
+            </updates>
+        </layout>   
+    </frontend>
+    
+	<admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <banners after="Mage_Adminhtml">Dzinehub_Banners_Adminhtml</banners>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+    	<layout>
+            <updates>
+                <banners>
+                    <file>dzinehub_banners.xml</file>
+                </banners>
+            </updates>
+        </layout>
+    </adminhtml>
+
+	<global>
+		<blocks>
+			<banners>
+				<class>Dzinehub_Banners_Block</class>
+			</banners>
+		</blocks>
+
+		<helpers>
+            <banners>  
+                <class>Dzinehub_Banners_Helper</class>
+            </banners>
+        </helpers>
+
+		<models>
+			<banners>
+				<class>Dzinehub_Banners_Model</class>
+				<resourceModel>banners_mysql4</resourceModel>
+			</banners>
+			<banners_mysql4>
+				<class>Dzinehub_Banners_Model_Mysql4</class>
+				<entities>
+					<manage>
+						<table>banners</table>
+					</manage>
+				</entities>
+			</banners_mysql4>
+		</models>
+		<resources>
+			<banners_setup>
+				<setup>
+					<module>Dzinehub_Banners</module>
+					<class>Mage_Core_Model_Resource_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</banners_setup>
+			<banners_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</banners_read>
+			<banners_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</banners_write>
+		</resources>
+	</global>
+</config>
