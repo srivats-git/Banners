@@ -67,6 +67,7 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
     			}
                 $bannerModel->setName($postData['name']);
                 $bannerModel->setStatus($postData['status']);
+                $bannerModel->setLink($postData['link']);
                 $bannerModel->setPath($postData['fileimage']);
     			$bannerModel->save();
     			Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('banners')->__("Banner was sucessfully saved"));
@@ -92,8 +93,8 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
             try
             {
                 $bannerModel=Mage::getModel('banners/manage');
-                $bannerModel->setid($this->getRequest()->getParam('id'))->delete();
-                Mage::getSingleton('adminhtml/session')->addError(Mage::helper('banners')->__("Banner deleted"));
+                $bannerModel->setId($this->getRequest()->getParam('id'))->delete();
+                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('banners')->__("Banner deleted"));
                 $this->_redirect('*/*/');
             }
             catch (Exception $e)
