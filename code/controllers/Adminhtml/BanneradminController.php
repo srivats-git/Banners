@@ -8,11 +8,11 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
 		 ->_addBreadcrumb(Mage::helper('banners')->__('Banners Manager'), Mage::helper('banners')->__('Banners Manager'));
         return $this;
 	}
-	
-	public function indexAction() 
+
+	public function indexAction()
 	 {
         $this->_initAction();
-        $this->loadLayout();      
+        $this->loadLayout();
         $this->_addContent($this->getLayout()->createBlock('banners/adminhtml_banners'));
         $this->renderLayout();
     }
@@ -36,7 +36,7 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
     		->_addLeft($this->getLayout()->createBlock('banners/adminhtml_banners_edit_tabs'));
     		$this->renderLayout();
     	}
-    }   
+    }
 
 
     public function saveAction()
@@ -46,9 +46,8 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
     		try
     		{
     			$postData=$this->getRequest()->getPost();
-                Mage::log($this->getRequest()->getRawBody());
     			$bannerModel=Mage::getModel('banners/manage');
-                $bannerModel->setBannerId($this->getRequest()->getParam('id'));    			
+                $bannerModel->setBannerId($this->getRequest()->getParam('id'));
     			if(isset($_FILES['file_image']['name']) and file_exists($_FILES['file_image']['tmp_name']))
     			{
     				try
@@ -59,7 +58,7 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
     					$uploader->setFilesDispersion(false);
     					$path=Mage::getBaseDir('media').DS;
     					$uploader->save($path,$_FILES['file_image']['name']);
-    					$postData['fileimage']=$_FILES['file_image']['name'];                        
+    					$postData['fileimage']=$_FILES['file_image']['name'];
     				}
     				catch(Exception $e)
     				{
@@ -67,7 +66,6 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
     				}
     			}
                 $bannerModel->setName($postData['name']);
-                Mage::log($bannerModel->setLink($postData['link']));
                 $bannerModel->setStatus($postData['status']);
                 $bannerModel->setPath($postData['fileimage']);
     			$bannerModel->save();
@@ -97,12 +95,12 @@ class Dzinehub_Banners_Adminhtml_BanneradminController extends Mage_Adminhtml_Co
                 $bannerModel->setid($this->getRequest()->getParam('id'))->delete();
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('banners')->__("Banner deleted"));
                 $this->_redirect('*/*/');
-            } 
+            }
             catch (Exception $e)
             {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
                 $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
-            }          
+            }
         }
         $this->_redirect('*/*/');
     }
