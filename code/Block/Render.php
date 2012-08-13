@@ -22,7 +22,6 @@ class Dzinehub_Banners_Block_Render extends Mage_Core_Block_Template
 		$directionNav=Mage::getStoreConfig('banners/bannerconfig/prev_next');
 		$pauseonHover=Mage::getStoreConfig('banners/bannerconfig/pauseonhover');
 		$manualAdvance=Mage::getStoreConfig('banners/bannerconfig/manual_advance');
-		Mage::log($manualAdvance);
 		echo $this->noConflict();
 		$this->js = "x(window).load(function(){";
 		$this->js.= "x('#nivo-slider').nivoSlider({";
