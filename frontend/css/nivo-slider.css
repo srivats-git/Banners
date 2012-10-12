@@ -109,3 +109,26 @@
     border:0;
     display:block;
 }
+
+.nivoSlider a {
+	float:left;
+    border:0;
+    display:block;
+}
+
+.nivo-controlNav {
+	float:right;
+	padding:255px 20px 0px 0px;
+}
+
+.nivoSlider a span {
+	float:left;
+	padding:0px 8px;
+	text-indent:-999px;
+	background:url(../images/dotnormal.png) no-repeat;
+}
+
+.nivoSlider a.active span {
+	background:url(../images/dothover.png) no-repeat;
+}
+
