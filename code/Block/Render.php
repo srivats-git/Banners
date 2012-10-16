@@ -7,7 +7,7 @@ class Dzinehub_Banners_Block_Render extends Mage_Core_Block_Template
 
 	public function getAllImages()
 	{
-		$collection=Mage::getModel('banners/manage')->getCollection()->addFieldToFilter('status',1);
+		$collection=Mage::getModel('banners/manage')->getCollection()->addFieldToFilter('status',1)->setOrder('banner_id','ASC');
 		return $collection;
 	}
 
